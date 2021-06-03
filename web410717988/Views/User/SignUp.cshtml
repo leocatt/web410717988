@@ -1,0 +1,17 @@
+﻿@model web410717988.ViewModels.SignUpData
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>會員註冊</h2>
+
+
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+{
+    <p>姓名：@Html.TextBoxFor(m => m.Name) @Model.NameMessage</p>
+    <p>賬號：@Html.TextBoxFor(m => m.Account) @Model.AccountMessage</p>
+    <p>密碼：@Html.PasswordFor(m => m.Password) @Model.PasswordMessage</p>
+    <p>@Model.Message</p>
+    <input type="submit" value="註冊" />
+}
+
